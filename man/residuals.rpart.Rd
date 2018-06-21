@@ -47,7 +47,7 @@
 }
 \examples{
 fit <- rpart(skips ~ Opening + Solder + Mask + PadType + Panel,
-             data = solder, method = "anova")
+             data = solder.balance, method = "anova")
 summary(residuals(fit))
 plot(predict(fit),residuals(fit))
 }

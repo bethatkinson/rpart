@@ -1,5 +1,10 @@
 \name{NEWS}
 \title{NEWS file for the rpart package}
+\section{Changes in version 4.1-14}{
+  \itemize{
+    \item Changed example data solder to solder.balance.  The full
+    version of the data is available in the survival package.
+ }}
 \section{Changes in version 4.1-10}{
   \itemize{
     \item Rpart would fail with a formula having  ~. - x on the right hand

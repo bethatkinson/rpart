@@ -1460,11 +1460,11 @@ a value of $k=10$ does essentially no shrinkage.
 For \Co{method='poisson'}, the optional parameters list is the single
 number $k$, with a default value of 1.
 
-\subsection{Example: solder data}
-The solder data frame, as explained in the R help file, is a
+\subsection{Example: solder.balance data}
+The solder.balance data frame, as explained in the R help file, is a
 dataset with 900 observations which are the results of an
 experiment varying 5 factors relevant to the wave-soldering procedure
-for mounting components on printed circuit boards.  The response
+for mounting components on printed circuit boards.  The full version of the data (unbalanced) is available in the \Co{survival} package.  The response
 variable, skips, is a count of how many solder skips appeared to a
 visual inspection.  The other variables are listed below:
 
@@ -1490,7 +1490,7 @@ counts alone.
 
 <<>>=
 sfit <- rpart(skips ~ Opening + Solder + Mask + PadType + Panel,
-              data = solder, method = 'poisson',
+              data = solder.balance, method = 'poisson',
               control = rpart.control(cp = 0.05, maxcompete = 2))
 sfit
 @
@@ -1520,7 +1520,7 @@ boundary effect mentioned earlier, but more research is needed.
 
 \begin{figure}
   \myfig{longintro-poisson1}
-  \caption{The first figure shows the solder data, fit with the
+  \caption{The first figure shows the solder.balance data, fit with the
     \Co{poisson} method, using a \Co{cp} value of 0.05.  The second figure
     shows the same fit, but with a \Co{cp} value of 0.10.  The function
     \Co{prune.rpart} was used to produce the smaller tree.}

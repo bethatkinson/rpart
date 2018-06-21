@@ -1,4 +1,7 @@
-2018 Jun 06     4.1-14  Change post.rpart.Rd example so as to not write outside tempdir()
+2018 Jun 21     4.1-14  Change post.rpart.Rd example so as to not write outside tempdir()
+                        Changed name of solder to solder.balance
+	                Modified vignettes slightly
+
 2018 Jan 08	4.1-12	Merge ChangeLog files
 
 2017 Mar 12	4.1-11	Include directly-needed headers, update o/p for R

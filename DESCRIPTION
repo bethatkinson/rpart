@@ -27,3 +27,4 @@ Maintainer: Beth Atkinson <atkinson@mayo.edu>
 Repository: CRAN
 URL: https://github.com/bethatkinson/rpart, https://cran.r-project.org/package=rpart
 BugReports: https://github.com/bethatkinson/rpart/issues
+RoxygenNote: 6.0.1
