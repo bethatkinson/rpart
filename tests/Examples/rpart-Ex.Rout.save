@@ -1,5 +1,5 @@
 
-R Under development (unstable) (2017-03-10 r72326) -- "Unsuffered Consequences"
+R version 3.4.2 (2017-09-28) -- "Short Summer"
 Copyright (C) 2017 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -255,13 +255,15 @@ node), split, n, loss, yval, (yprob)
 > 
 > ### ** Examples
 > 
-> z.auto <- rpart(Mileage ~ Weight, car.test.frame)
-> post(z.auto, file = "")   # display tree on active device
->    # now construct postscript version on file "pretty.ps"
->    # with no title
-> post(z.auto, file = "pretty.ps", title = " ")
-> z.hp <- rpart(Mileage ~ Weight + HP, car.test.frame)
-> post(z.hp)
+> ## Not run: 
+> ##D z.auto <- rpart(Mileage ~ Weight, car.test.frame)
+> ##D post(z.auto, file = "")   # display tree on active device
+> ##D    # now construct postscript version on file "pretty.ps"
+> ##D    # with no title
+> ##D post(z.auto, file = "pretty.ps", title = " ")
+> ##D z.hp <- rpart(Mileage ~ Weight + HP, car.test.frame)
+> ##D post(z.hp)
+> ## End(Not run)
 > 
 > 
 > 
@@ -682,7 +684,7 @@ n= 60
 > ### ** Examples
 > 
 > fit <- rpart(skips ~ Opening + Solder + Mask + PadType + Panel,
-+              data = solder, method = "anova")
++              data = solder.balance, method = "anova")
 > summary(residuals(fit))
     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
 -13.8000  -1.0361  -0.6833   0.0000   0.9639  16.2000 
@@ -777,20 +779,20 @@ n= 60
 > 
 > 
 > cleanEx()
-> nameEx("solder")
-> ### * solder
+> nameEx("solder.balance")
+> ### * solder.balance
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: solder
+> ### Name: solder.balance
 > ### Title: Soldering of Components on Printed-Circuit Boards
-> ### Aliases: solder
+> ### Aliases: solder.balance solder
 > ### Keywords: datasets
 > 
 > ### ** Examples
 > 
 > fit <- rpart(skips ~ Opening + Solder + Mask + PadType + Panel,
-+              data = solder, method = "anova")
++              data = solder.balance, method = "anova")
 > summary(residuals(fit))
     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
 -13.8000  -1.0361  -0.6833   0.0000   0.9639  16.2000 
@@ -1063,7 +1065,7 @@ n= 60
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  2.25 0.09 2.516 0 0 
+Time elapsed:  1.743 0.085 2.075 0 0 
 > grDevices::dev.off()
 null device 
           1 

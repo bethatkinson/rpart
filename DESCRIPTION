@@ -1,7 +1,7 @@
 Package: rpart
 Priority: recommended
 Version: 4.1-14
-Date: 2018-06-20
+Date: 2018-07-23
 Authors@R: c(person("Terry", "Therneau", role = "aut",
 	            email = "therneau@mayo.edu"),
              person("Beth", "Atkinson", role = c("aut", "cre"),
@@ -27,4 +27,3 @@ Maintainer: Beth Atkinson <atkinson@mayo.edu>
 Repository: CRAN
 URL: https://github.com/bethatkinson/rpart, https://cran.r-project.org/package=rpart
 BugReports: https://github.com/bethatkinson/rpart/issues
-RoxygenNote: 6.0.1
