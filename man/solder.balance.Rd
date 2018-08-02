@@ -5,8 +5,10 @@
 \description{
   The \code{solder.balance} data frame has 720 rows and 6 columns, representing
   a balanced subset of a designed experiment varying 5 factors on the
-  soldering of components on printed-circuit boards.  The full version
-  of the solder data can be found in the survival package.
+  soldering of components on printed-circuit boards.
+
+  The \code{solder} data frame is the full version of the data with 900
+  rows.  It is located in both the rpart and the survival packages.
 }
 \usage{
 solder
