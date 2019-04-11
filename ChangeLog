@@ -1,6 +1,7 @@
+2019 Apr 11     4.1-15  Update saved test/example results because of changes to R random number generators
 2018 Jul 31     4.1-14  Change post.rpart.Rd example so as to not write outside tempdir()
                         Changed name of solder to solder.balance and added in solder from the 
-                        survival package (larger than solder.balance).  Now data matches between 
+                        survival package (larger than solder.balance).  Now data matches between the 
                         packages.
 	                Modified vignettes slightly
 

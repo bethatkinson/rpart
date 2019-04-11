@@ -9,7 +9,7 @@
 library(rpart)
 require(survival)
 options(digits=4)  #avoid trivial rounding changes across R versions
-
+set.seed(10)
 # 
 #
 # Survival, using the stagec data

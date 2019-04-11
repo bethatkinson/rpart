@@ -3,6 +3,7 @@
 #
 library(rpart)
 require(survival)
+set.seed(10)
 
 aeq <- function(x,y, ...) all.equal(as.vector(x), as.vector(y), ...)
 tdata <- data.frame(time=c(1,4,3,2,5,7,8,9,4), status=c(0,1,1,0,0,1,1,0,1),

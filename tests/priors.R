@@ -14,6 +14,7 @@ pdata <- data.frame(y=factor(rep(1:3, 5)),
 pdata$x3[c(1,5,10)] <- NA
 pdata$y[15] <- 1     # make things unbalanced
 
+set.seed(10)
 pfit <- rpart(y ~ x1 + x2 + x3, pdata,
               cp=0, xval=0, minsplit=5, maxdepth=1,
               parms=list(prior=c(.2, .3, .5), 

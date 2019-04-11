@@ -8,6 +8,7 @@
 #   rows are surrogate splits.
 library(rpart)
 require(survival)
+set.seed(10)
 
 tempc <- rpart.control(maxsurrogate=0, cp=0, xval=0)
 fit1 <- rpart(Surv(pgtime, pgstat) ~ age + eet + g2+grade+gleason +ploidy,

@@ -4,6 +4,7 @@
 #
 library(rpart)
 require(survival)
+set.seed(10)
 
 fit1 <- rpart(Surv(pgtime, pgstat) ~ age + eet + g2+grade+gleason +ploidy,
                 stagec,  method='poisson')

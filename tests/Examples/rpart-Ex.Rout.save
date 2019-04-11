@@ -1,6 +1,6 @@
 
-R version 3.4.2 (2017-09-28) -- "Short Summer"
-Copyright (C) 2017 The R Foundation for Statistical Computing
+R Under development (unstable) (2019-04-05 r76323) -- "Unsuffered Consequences"
+Copyright (C) 2019 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -23,6 +23,7 @@ Type 'q()' to quit R.
 > library('rpart')
 > 
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
 > cleanEx()
 > nameEx("car.test.frame")
 > ### * car.test.frame
@@ -43,10 +44,10 @@ rpart(formula = Mileage ~ Weight, data = car.test.frame)
   n= 60 
 
           CP nsplit rel error    xerror       xstd
-1 0.59534912      0 1.0000000 1.0319924 0.17931937
-2 0.13452819      1 0.4046509 0.4875114 0.07613003
-3 0.01282843      2 0.2701227 0.3802248 0.06685452
-4 0.01000000      3 0.2572943 0.3945980 0.06605572
+1 0.59534912      0 1.0000000 1.0337818 0.18046532
+2 0.13452819      1 0.4046509 0.5836606 0.10900973
+3 0.01282843      2 0.2701227 0.4409221 0.08652804
+4 0.01000000      3 0.2572943 0.4415805 0.08663003
 
 Variable importance
 Weight 
@@ -549,16 +550,16 @@ node), split, n, loss, yval, (yprob)
       * denotes terminal node
 
 1) root 75 50 setosa (0.33333333 0.33333333 0.33333333)  
-  2) Petal.Length< 2.35 25  0 setosa (1.00000000 0.00000000 0.00000000) *
-  3) Petal.Length>=2.35 50 25 versicolor (0.00000000 0.50000000 0.50000000)  
-    6) Petal.Width< 1.65 27  2 versicolor (0.00000000 0.92592593 0.07407407) *
-    7) Petal.Width>=1.65 23  0 virginica (0.00000000 0.00000000 1.00000000) *
+  2) Petal.Length< 2.5 25  0 setosa (1.00000000 0.00000000 0.00000000) *
+  3) Petal.Length>=2.5 50 25 versicolor (0.00000000 0.50000000 0.50000000)  
+    6) Petal.Length< 4.85 26  2 versicolor (0.00000000 0.92307692 0.07692308) *
+    7) Petal.Length>=4.85 24  1 virginica (0.00000000 0.04166667 0.95833333) *
 > table(predict(fit, iris[-sub,], type = "class"), iris[-sub, "Species"])
             
              setosa versicolor virginica
   setosa         25          0         0
-  versicolor      0         23         2
-  virginica       0          2        23
+  versicolor      0         22         1
+  virginica       0          3        24
 > 
 > 
 > 
@@ -630,10 +631,10 @@ Root node error: 1354.6/60 = 22.576
 n= 60 
 
         CP nsplit rel error  xerror     xstd
-1 0.595349      0   1.00000 1.03199 0.179319
-2 0.134528      1   0.40465 0.48751 0.076130
-3 0.012828      2   0.27012 0.38022 0.066855
-4 0.010000      3   0.25729 0.39460 0.066056
+1 0.595349      0   1.00000 1.03378 0.180465
+2 0.134528      1   0.40465 0.58366 0.109010
+3 0.012828      2   0.27012 0.44092 0.086528
+4 0.010000      3   0.25729 0.44158 0.086630
 > ## Not run: 
 > ##D Regression tree:
 > ##D rpart(formula = Mileage ~ Weight, data = car.test.frame)
@@ -746,10 +747,10 @@ Root node error: 1354.6/60 = 22.576
 n= 60 
 
         CP nsplit rel error  xerror     xstd
-1 0.595349      0   1.00000 1.03199 0.179319
-2 0.134528      1   0.40465 0.48751 0.076130
-3 0.012828      2   0.27012 0.38022 0.066855
-4 0.010000      3   0.25729 0.39460 0.066056
+1 0.595349      0   1.00000 1.03378 0.180465
+2 0.134528      1   0.40465 0.58366 0.109010
+3 0.012828      2   0.27012 0.44092 0.086528
+4 0.010000      3   0.25729 0.44158 0.086630
 > 
 > 
 > 
@@ -865,10 +866,10 @@ rpart(formula = Mileage ~ Weight, data = car.test.frame)
   n= 60 
 
           CP nsplit rel error    xerror       xstd
-1 0.59534912      0 1.0000000 1.0319924 0.17931937
-2 0.13452819      1 0.4046509 0.4875114 0.07613003
-3 0.01282843      2 0.2701227 0.3802248 0.06685452
-4 0.01000000      3 0.2572943 0.3945980 0.06605572
+1 0.59534912      0 1.0000000 1.0337818 0.18046532
+2 0.13452819      1 0.4046509 0.5836606 0.10900973
+3 0.01282843      2 0.2701227 0.4409221 0.08652804
+4 0.01000000      3 0.2572943 0.4415805 0.08663003
 
 Variable importance
 Weight 
@@ -913,8 +914,8 @@ rpart(formula = Kyphosis ~ Age + Number + Start, data = kyphosis)
 
           CP nsplit rel error   xerror      xstd
 1 0.17647059      0 1.0000000 1.000000 0.2155872
-2 0.01960784      1 0.8235294 1.352941 0.2387187
-3 0.01000000      4 0.7647059 1.294118 0.2354756
+2 0.01960784      1 0.8235294 1.058824 0.2200975
+3 0.01000000      4 0.7647059 1.058824 0.2200975
 
 Variable importance
  Start    Age Number 
@@ -1035,12 +1036,12 @@ Node number 23: 7 observations
 > xerr <- (xmat - car.test.frame$Mileage)^2
 > apply(xerr, 2, sum)   # cross-validated error estimate
 0.79767456 0.28300396 0.04154257 0.01132626 
- 1423.9568   740.4845   544.3925   536.6344 
+ 1396.6687   773.1546   577.8990   594.1341 
 > 
 > # approx same result as rel. error from printcp(fit)
 > apply(xerr, 2, sum)/var(car.test.frame$Mileage) 
 0.79767456 0.28300396 0.04154257 0.01132626 
-  62.02162   32.25242   23.71147   23.37355 
+  60.83306   33.67539   25.17087   25.87800 
 > printcp(fit)
 
 Regression tree:
@@ -1054,18 +1055,19 @@ Root node error: 1354.6/60 = 22.576
 n= 60 
 
         CP nsplit rel error  xerror     xstd
-1 0.595349      0   1.00000 1.03199 0.179319
-2 0.134528      1   0.40465 0.48751 0.076130
-3 0.012828      2   0.27012 0.38022 0.066855
-4 0.010000      3   0.25729 0.39460 0.066056
+1 0.595349      0   1.00000 1.03378 0.180465
+2 0.134528      1   0.40465 0.58366 0.109010
+3 0.012828      2   0.27012 0.44092 0.086528
+4 0.010000      3   0.25729 0.44158 0.086630
 > 
 > 
 > 
 > ### * <FOOTER>
 > ###
+> cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  1.743 0.085 2.075 0 0 
+Time elapsed:  0.777 0.048 0.825 0 0 
 > grDevices::dev.off()
 null device 
           1 

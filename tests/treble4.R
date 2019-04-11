@@ -6,6 +6,7 @@
 # to cause a split where it shouldn't be). Eric Lunde 2005-08-03
 library(rpart)
 control <- rpart.control(maxsurrogate=0, cp=1e-15, xval=0)
+set.seed(10)
 
 fit1 <- rpart(Kyphosis ~ Age + Number + Start, data=kyphosis, 
               control=control,

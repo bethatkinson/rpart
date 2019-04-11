@@ -3,6 +3,8 @@
 #  
 #
 library(rpart)
+set.seed(10)
+
 xgrp <- rep(1:10,length=nrow(cu.summary))
 carfit <- rpart(Country ~ Reliability + Price + Mileage + Type,
 		 method='class', data=cu.summary, 

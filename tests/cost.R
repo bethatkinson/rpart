@@ -2,6 +2,7 @@ library(rpart)
 require(survival)
 aeq <- function(x,y, ...) all.equal(as.vector(x), as.vector(y), ...)
 
+set.seed(10)
 #
 # Check out using costs
 #

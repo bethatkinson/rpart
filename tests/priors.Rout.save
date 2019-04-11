@@ -1,8 +1,7 @@
 
-R version 2.15.0 (2012-03-30)
-Copyright (C) 2012 The R Foundation for Statistical Computing
-ISBN 3-900051-07-0
-Platform: x86_64-unknown-linux-gnu (64-bit)
+R Under development (unstable) (2019-04-05 r76323) -- "Unsuffered Consequences"
+Copyright (C) 2019 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -32,6 +31,7 @@ Type 'q()' to quit R.
 > pdata$x3[c(1,5,10)] <- NA
 > pdata$y[15] <- 1     # make things unbalanced
 > 
+> set.seed(10)
 > pfit <- rpart(y ~ x1 + x2 + x3, pdata,
 +               cp=0, xval=0, minsplit=5, maxdepth=1,
 +               parms=list(prior=c(.2, .3, .5), 
@@ -94,4 +94,4 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
-  0.211   0.059   0.315 
+  0.129   0.012   0.135 

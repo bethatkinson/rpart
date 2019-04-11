@@ -9,6 +9,8 @@ names(mystate) <- c("population","income" , "illiteracy","life" ,
 # tdata = 20 copies of "mystate"  
 # trees with tdata and trees with mystate should be the same (they are)
 #  except for the n's
+set.seed(10)
+
 tdata <- rbind(mystate, mystate, mystate, mystate, mystate)
 tdata <- rbind(tdata, tdata, tdata, tdata)
 tfit1 <- rpart(income ~ population + illiteracy + murder + hs.grad + region,
