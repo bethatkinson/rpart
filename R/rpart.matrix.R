@@ -14,10 +14,15 @@ rpart.matrix <- function(frame)
     ## turn other classes into numerics.
     ## We replace columns in frame rather than making a new object, since
     ## model.matrix wants a model.frame object as it's argument.
-    for (i in 1:ncol(frame)) {
-        if (is.character(frame[[i]])) frame[[i]] <- as.numeric(factor(frame[[i]]))
-        else if (!is.numeric(frame[[i]])) frame[[i]] <- as.numeric(frame[[i]])
-    }
+
+    frame[] <- lapply(frame, 
+                      function(x) {
+                          if (is.character(x)) as.numeric(factor(x))
+                          else if(!is.numeric(x))  as.numeric(x)
+                          else x
+                          }
+                      )
+  
     ## Toss the intercept term when done (column 1)
     X <- model.matrix(attr(frame, "terms"), frame)[, -1L, drop = FALSE]
     ## model.matrix labels columns with backticks, and rpart.matrix did not.
