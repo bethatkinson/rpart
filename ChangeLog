@@ -1,3 +1,4 @@
+2019 May 21     4.1-16  Updated rpart.matrix to use lapply instead of a loop
 2019 Apr 11     4.1-15  Update saved test/example results because of changes to R random number generators
 2018 Jul 31     4.1-14  Change post.rpart.Rd example so as to not write outside tempdir()
                         Changed name of solder to solder.balance and added in solder from the 
