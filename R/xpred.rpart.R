@@ -65,7 +65,7 @@ xpred.rpart <- function(fit, xval = 10L, cp, return.all = FALSE)
 
     if (length(xval) == 1L) {
 	## make random groups
-	xgroups <- sample(rep(1L:xval, length = nobs), nobs, replace = FALSE)
+	xgroups <- sample(rep(1L:xval, length.out = nobs), nobs, replace = FALSE)
     } else if (length(xval) == nrow(X)) {
 	xgroups <- xval
 	xval <- length(unique(xgroups))
