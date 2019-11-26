@@ -107,7 +107,7 @@ rpart <-
 	xval <- 0L
     } else if (length(xval) == 1L) {
         ## make random groups
-        xgroups <- sample(rep(1L:xval, length = nobs), nobs, replace = FALSE)
+        xgroups <- sample(rep(1L:xval, length.out = nobs), nobs, replace = FALSE)
     } else if (length(xval) == nobs) {
 	xgroups <- xval
 	xval <- length(unique(xgroups))
