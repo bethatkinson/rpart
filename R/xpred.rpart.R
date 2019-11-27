@@ -51,9 +51,11 @@ xpred.rpart <- function(fit, xval = 10L, cp, return.all = FALSE)
 
     cats <- rep(0, nvar)
     xlevels <- attr(fit, "xlevels")
-    if (!is.null(xlevels))
+    if (!is.null(xlevels)) {
+        xlevels <- xlevels[names(xlevels) %in% colnames(X)]
         cats[match(names(xlevels), colnames(X))] <-
             unlist(lapply(xlevels, length))
+    }
 
     controls <- fit$control
     if (missing(cp)) {
