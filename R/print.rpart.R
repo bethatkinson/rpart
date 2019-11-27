@@ -1,5 +1,5 @@
 print.rpart <- function(x, minlength = 0L, spaces = 2L, cp,
-               digits = getOption("digits"), ...)
+               digits = getOption("digits"), nsmall = min(20, digits), ...)
 {
     if (!inherits(x, "rpart")) stop("Not a legitimate \"rpart\" object")
 
@@ -17,8 +17,8 @@ print.rpart <- function(x, minlength = 0L, spaces = 2L, cp,
 
     tfun <- (x$functions)$print
     yval <- if (!is.null(tfun)) {
-	if (is.null(frame$yval2)) tfun(frame$yval, ylevel, digits)
-	else tfun(frame$yval2, ylevel, digits)
+	if (is.null(frame$yval2)) tfun(frame$yval, ylevel, digits, nsmall)
+	else tfun(frame$yval2, ylevel, digits, nsmall)
     } else format(signif(frame$yval, digits))
     term <- rep(" ", length(depth))
     term[frame$var == "<leaf>"] <- "*"

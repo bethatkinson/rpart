@@ -54,14 +54,14 @@ rpart.class <- function(y, offset, parms, wt)
 
     list(y = y, parms = parms, numresp = numclass + 2L, counts = counts,
 	 ylevels = levels(fy), numy = 1L,
-	 print = function(yval, ylevel, digits) {
+	 print = function(yval, ylevel, digits, nsmall) {
 	     temp <- if (is.null(ylevel)) as.character(yval[, 1L])
 	     else ylevel[yval[, 1L]]
 
 	     nclass <- (ncol(yval) - 2L)/2L
 	     yprob <- if (nclass < 5L)
 		 format(yval[, 1L + nclass + 1L:nclass],
-                        digits = digits, nsmall = digits)
+                        digits = digits, nsmall = nsmall)
 	     else formatg(yval[, 1L + nclass + 1L:nclass], digits = 2L)
 	     if (!is.matrix(yprob)) #this case only occurs for no split trees
                  yprob <- matrix(yprob, nrow = 1L)
