@@ -81,9 +81,11 @@ rpart <-
 
     xlevels <- .getXlevels(Terms, m)
     cats <- rep(0L, ncol(X))
-    if (!is.null(xlevels))
+    if (!is.null(xlevels)) {
+        xlevels <- xlevels[names(xlevels) %in% colnames(X)]
 	cats[match(names(xlevels), colnames(X))] <-
             unlist(lapply(xlevels, length))
+    }
 
     ## We want to pass any ... args to rpart.control, but not pass things
     ##  like "dats = mydata" where someone just made a typo.  The use of ...
