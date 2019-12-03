@@ -8,7 +8,8 @@ This function prints an \code{rpart} object.  It is a method for the generic
 function \code{print} of class \code{"rpart"}. 
 }
 \usage{
-\method{print}{rpart}(x, minlength = 0, spaces = 2, cp, digits = getOption("digits"), \dots)
+\method{print}{rpart}(x, minlength = 0, spaces = 2, cp, digits = getOption("digits"),
+  nsmall = min(20, digits), \dots)
 }
 \arguments{
 \item{x}{
@@ -24,6 +25,9 @@ the number of spaces to indent nodes of increasing depth.
 }
 \item{digits}{
 the number of digits of numbers to print. 
+}
+\item{nsmall}{
+the number of digits to the right of the decimal. See \code{\link{format}}. 
 }
 \item{cp}{
   prune all nodes with a complexity less than \code{cp} from the
