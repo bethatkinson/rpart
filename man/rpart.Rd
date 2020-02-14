@@ -13,7 +13,7 @@ rpart(formula, data, weights, subset, na.action = na.rpart, method,
 }
 \arguments{
   \item{formula}{a \link{formula}, with a response but no interaction
-    terms.  If this a data frame, that is taken as the model frame
+    terms.  If this is a data frame, it is taken as the model frame
     (see \code{\link{model.frame}).}
   }
   
