@@ -520,7 +520,7 @@ where $E$ is our error in prediction function.
 The inner optimization is trivial for most problems, so we normally
 don't think about it.
 For a continuous $y$ variable for instance the error is
-$E(y,p) = (y=p)^2$ and $p1$ is the mean $y$ value of all subjects in
+$E(y,p) = (y-p)^2$ and $p1$ is the mean $y$ value of all subjects in
 group 1.
 
 Now reverse the order of the above equation, and instead think of the
