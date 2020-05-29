@@ -1,3 +1,5 @@
+zzzz zzz zz     4.1-17  plot.rpart() gained three new arguments (branch.col, branch.lty, branch.lwd) for 
+                        controlling the color, line type, and width of the branches.
 2019 May 21     4.1-16  Updated rpart.matrix to use lapply instead of a loop
 2019 Apr 11     4.1-15  Update saved test/example results because of changes to R random number generators
 2018 Jul 31     4.1-14  Change post.rpart.Rd example so as to not write outside tempdir()
@@ -8,8 +10,7 @@
 
 2018 Jan 08	4.1-12	Merge ChangeLog files
 
-2017 Mar 12	4.1-11	Include directly-needed headers, update o/p for R
-3.4.0.
+2017 Mar 12	4.1-11	Include directly-needed headers, update o/p for R 3.4.0.
 
 2015 Jun 29	4.1-10	Tweak imports.
 

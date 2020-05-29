@@ -8,7 +8,8 @@ Plots an rpart object on the current graphics device.
 }
 \usage{
 \method{plot}{rpart}(x, uniform = FALSE, branch = 1, compress = FALSE, nspace,
-     margin = 0, minbranch = 0.3, \dots)
+     margin = 0, minbranch = 0.3, branch.col = 1, branch.lty = 1, 
+     branch.lwd = 1, \dots)
 }
 \arguments{
 \item{x}{
@@ -52,6 +53,15 @@ Sometimes a split will give very little improvement, or even (in
 the classification case) no improvement at all.  
 A tree with branch lengths strictly proportional to improvement
 leaves no room to squeeze in node labels.
+}
+\item{branch.col}{
+set the color of the branches.
+}
+\item{branch.lty}{
+set the line type of the branches.
+}
+\item{branch.lwd}{
+set the line width of the branches.
 }
 \item{\dots}{
   arguments to be passed to or from other methods.
