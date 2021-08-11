@@ -1,5 +1,6 @@
 plot.rpart <- function(x, uniform = FALSE, branch = 1, compress = FALSE,
-                       nspace, margin = 0, minbranch = 0.3, ...)
+                       nspace, margin = 0, minbranch = 0.3, branch.col = 1,
+                       branch.lty = 1, branch.lwd = 1, ...)
 {
     if (!inherits(x, "rpart")) stop("Not a legitimate \"rpart\" object")
     if (nrow(x$frame) <= 1L) stop("fit is not a tree, just a root")
@@ -27,7 +28,8 @@ plot.rpart <- function(x, uniform = FALSE, branch = 1, compress = FALSE,
     temp <- rpart.branch(xx, yy, node, branch)
 
     if (branch > 0) text(xx[1L], yy[1L], "|")
-    lines(c(temp$x), c(temp$y))
+    lines(c(temp$x), c(temp$y), col = branch.col, lty = branch.lty, 
+          lwd = branch.lwd)
     invisible(list(x = xx, y = yy))
 }
 
