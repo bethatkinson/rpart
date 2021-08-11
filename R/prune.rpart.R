@@ -9,7 +9,7 @@ prune.rpart <- function(tree, cp, ...)
     temp <- pmax(tree$cptable[, 1L], cp)
     keep <- match(unique(temp), temp)
     newx$cptable <- tree$cptable[keep, , drop = FALSE]
-    newx$cptable[max(keep), 1L] <- cp
+    newx$cptable[length(keep), 1L] <- cp
     # Reset the variable importance
     newx$variable.importance <- importance(newx)
     newx
