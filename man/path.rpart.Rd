@@ -64,6 +64,6 @@ path.rpart(tree, nodes, pretty = 0, print.it = TRUE)
 \examples{
 fit <- rpart(Kyphosis ~ Age + Number + Start, data = kyphosis)
 print(fit)
-path.rpart(fit, node = c(11, 22))
+path.rpart(fit, nodes = c(11, 22))
 }
 \keyword{tree}
