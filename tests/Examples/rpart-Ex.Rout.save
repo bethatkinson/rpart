@@ -205,7 +205,7 @@ node), split, n, loss, yval, (yprob)
         22) Age>=111 14  2 absent (0.85714286 0.14285714) *
         23) Age< 111 7  3 present (0.42857143 0.57142857) *
    3) Start< 8.5 19  8 present (0.42105263 0.57894737) *
-> path.rpart(fit, node = c(11, 22))
+> path.rpart(fit, nodes = c(11, 22))
 
  node number: 11 
    root
