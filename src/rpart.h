@@ -20,7 +20,7 @@
  * Memory defined with R_alloc is removed automatically
  *  That with "CALLOC" I have to remove myself.  Use the
  *  latter for objects that need to persist between the
- *  s_to_rp1 and s_to_rp2 calls
+ *  s_to_rp1 and s_to_rp2 calls, and is removed with R_Free
  */
 #define ALLOC(a,b)  R_alloc(a,b)
 #define CALLOC(a,b) R_chk_calloc((size_t)(a), b)
@@ -75,11 +75,17 @@ EXTERN struct {
 } rp;
 
 EXTERN struct cptable *cptable_tail;
-EXTERN int (*rp_init) ();       /*called to initialize a splitting function */
-EXTERN void (*rp_choose) ();    /*set to the splitting function */
-EXTERN void (*rp_eval) ();      /*set to the evaluation routine */
-EXTERN double (*rp_error) ();   /*set to the prediction error routine */
 EXTERN int nodesize;
+/*called to initialize a splitting function */
+EXTERN int (*rp_init) (int, double **, int, char **, double *, int *,
+		       int, double *);
+/*set to the splitting function */
+EXTERN void (*rp_choose) (int, double **, double *, int, int, double *,
+			  double *, int *, double, double *);
+/*set to the evaluation routine */
+EXTERN void (*rp_eval) (int, double **, double *, double *, double *);
+/*set to the prediction error routine */
+EXTERN double (*rp_error) (double *, double *);
 
 /*
  * The user inputs his complexity parameter as a percentage. and the

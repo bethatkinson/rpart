@@ -82,9 +82,10 @@ rpart <-
     xlevels <- .getXlevels(Terms, m)
     cats <- rep(0L, ncol(X))
     if (!is.null(xlevels)) {
-        xlevels <- xlevels[names(xlevels) %in% colnames(X)]
-	cats[match(names(xlevels), colnames(X))] <-
-            unlist(lapply(xlevels, length))
+        # If a formula contains ". -zed" on the right hand side, and zed
+        #  is a factor, then xlevels will have zed but X won't
+        indx <- match(names(xlevels), colnames(X), nomatch=0)
+	cats[indx] <- (unlist(lapply(xlevels, length)))[indx>0]
     }
 
     ## We want to pass any ... args to rpart.control, but not pass things

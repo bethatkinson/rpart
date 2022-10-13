@@ -47,6 +47,7 @@ xval(int n_xval, CpTable cptable_head, int *x_grp,
     pNode xtree;
     CpTable cplist;
     double temp;
+    int itemp =0;
     double old_wt, total_wt;
 
     alphasave = rp.alpha;
@@ -132,7 +133,7 @@ xval(int n_xval, CpTable cptable_head, int *x_grp,
 	*/
 	xtree = (pNode) CALLOC(1, nodesize);
 	xtree->num_obs = k;
-	(*rp_init) (k, rp.ytemp, maxcat, errmsg, parms, &temp, 2, rp.wtemp);
+	(*rp_init) (k, rp.ytemp, maxcat, errmsg, parms, &itemp, 2, rp.wtemp);
 	(*rp_eval) (k, rp.ytemp, xtree->response_est, &(xtree->risk), rp.wtemp);
 	xtree->complexity = xtree->risk;
 	partition(1, xtree, &temp, 0, k);
