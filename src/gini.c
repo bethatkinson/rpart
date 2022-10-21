@@ -12,7 +12,7 @@ static double *prior, *aprior,  /* altered priors */
  *freq, *loss;                  /* loss matrix */
 static int *tsplit, *countn;
 static double *awt, *rate;
-static double (*impurity) ();
+static double (*impurity) (double);
 
 static double
 gini_impure1(double p)

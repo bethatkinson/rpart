@@ -1,11 +1,13 @@
-zzzz zzz zz     4.1-17  plot.rpart() gained three new arguments (branch.col, branch.lty, branch.lwd) for 
-                        controlling the color, line type, and width of the branches.
+2022 Oct 20     4.1-18  update C code to meet new CRAN standards
+                        update French translation
+zzzz zzz zz     4.1-17  plot.rpart() gained three new arguments (branch.col, branch.lty,
+	                branch.lwd) controlling the color, line type, and width of the branches.
 2019 May 21     4.1-16  Updated rpart.matrix to use lapply instead of a loop
 2019 Apr 11     4.1-15  Update saved test/example results because of changes to R random number generators
 2018 Jul 31     4.1-14  Change post.rpart.Rd example so as to not write outside tempdir()
-                        Changed name of solder to solder.balance and added in solder from the 
-                        survival package (larger than solder.balance).  Now data matches between the 
-                        packages.
+                        Changed name of solder to solder.balance and added in solder from the
+                        survival package (larger than solder.balance).  Now data matches
+	                between the packages.
 	                Modified vignettes slightly
 
 2018 Jan 08	4.1-12	Merge ChangeLog files
@@ -29,9 +31,9 @@ zzzz zzz zz     4.1-17  plot.rpart() gained three new arguments (branch.col, bra
 2014 Jan 25	4.1-5	Avoid abbreviation in tests/treble.R
 			More comprehensive Description: field.
 
-2013 Dec 10	4.1-4	Change pre-defined structure sizes to mitigate 
+2013 Dec 10	4.1-4	Change pre-defined structure sizes to mitigate
 	                false positives from Undefined Behaviour Sanitizer.
-	
+
 2013 Sep 01	4.1-3	Document TMT change to predict() output.
 
 2013 Aug 15	4.1-2	Replace calls to as.name().
@@ -43,9 +45,9 @@ zzzz zzz zz     4.1-17  plot.rpart() gained three new arguments (branch.col, bra
 2013 Mar 20	4.1-1	Add ko translations, update reference output for 3.0.0.
 
 2012 Nov 29	4.1-0	Remove rpconvert() (converted rpart2 trees).
-	
+
 			Clean up a lot of the R code.
-	
+
 			C code reformatted with GNU indent and
 			-i4 -nut -ncdb -d1 -br -ce -il0 -npcs -brs
 			then use whitespace-cleanup in Emacs.
@@ -129,7 +131,7 @@ zzzz zzz zz     4.1-17  plot.rpart() gained three new arguments (branch.col, bra
 2009 Jul 28	3.1-45	Add rpart-Ex.Rout.save file
 
 2009 May 18	3.1-44	Add German translations
-	
+
 2009 Mar 09	3.1-43	Spelling in man/snip.rpart.Rd.
 			Spacing issue in tests/testall.Rout.save
 			Remove environments from fit$functions if basic

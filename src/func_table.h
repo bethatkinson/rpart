@@ -47,10 +47,12 @@ extern double poissonpred(double *y, double *yhat);
 extern double usersplit_pred(double *y, double *yhat);
 
 static struct {
-    int (*init_split) ();
-    void (*choose_split) ();
-    void (*eval) ();
-    double (*error) ();
+    int (*init_split) (int, double **, int, char **, double *, int *, int, 
+		       double *);
+    void (*choose_split) (int, double **, double *, int, int, double *,
+			  double *, int *, double, double *);
+    void (*eval) (int, double **, double *, double *, double *);
+    double (*error) (double *, double *);
 } func_table[] = {
     {anovainit, anova, anovass, anovapred},
     {poissoninit, poisson, poissondev, poissonpred},
