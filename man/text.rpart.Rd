@@ -49,8 +49,9 @@
 }
 \item{use.n}{
   Logical.  If \code{TRUE}, adds to label 
-  (\#events level1/ \#events level2/etc. for \code{class},
-  \code{n} for \code{anova}, and \#events/n for \code{poisson} and \code{exp}).
+  \verb{(#events level1/ #events level2/} etc. for \code{class},
+  \code{n} for \code{anova}, and \verb{#events/n} for \code{poisson}
+  and \code{exp}).
 }
 \item{fancy}{
   Logical.  If \code{TRUE}, nodes are represented by ellipses (interior nodes)

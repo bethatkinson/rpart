@@ -10,7 +10,7 @@ pred.rpart <- function(fit, x)
     frame$index <- 1L + c(0L, cumsum((frame$var != "<leaf>") +
                                      nc[[1L]] + nc[[2L]]))[-(nrow(frame) + 1L)]
     frame$index[frame$var == "<leaf>"] <- 0L
-    vnum <- match(rownames(fit$split), colnames(x))
+    vnum <- match(rownames(fit$splits), colnames(x))
     if (any(is.na(vnum)))
         stop("Tree has variables not found in new data")
     temp <- .Call(C_pred_rpart,

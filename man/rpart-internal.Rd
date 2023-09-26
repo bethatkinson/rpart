@@ -1,6 +1,10 @@
 \name{rpart-internal}
 \alias{pred.rpart}
 \alias{rpart.matrix}
+\alias{rpart.class}
+\alias{rpart.anova}
+\alias{rpart.poisson}
+\alias{rpartco}
 \title{
   Internal Functions 
 }
