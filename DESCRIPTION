@@ -1,7 +1,7 @@
 Package: rpart
 Priority: recommended
-Version: 4.1.20
-Date: 2023-09-26
+Version: 4.1.21
+Date: 2023-10-09
 Authors@R: c(person("Terry", "Therneau", role = "aut",
 	            email = "therneau@mayo.edu"),
              person("Beth", "Atkinson", role = c("aut", "cre"),

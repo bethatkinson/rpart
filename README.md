@@ -3,7 +3,7 @@
 
 [![CRAN_STATUS_BADGE](http://www.r-pkg.org/badges/version/rpart)](https://CRAN.R-project.org/package=rpart)
 [![Downloads](http://cranlogs.r-pkg.org/badges/rpart)](https://CRAN.R-project.org/package=rpart)
-[![Travis-CI Build Status](https://travis-ci.org/bethatkinson/rpart.svg?branch=master)](https://travis-ci.org/bethatkinson/rpart)
+
 
 
 This is the source code for the  `rpart` package, which is a recommended package in R.

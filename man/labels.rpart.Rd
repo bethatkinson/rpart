@@ -29,7 +29,7 @@
   function is used, passed the \code{minlength} argument.
 }
 \item{pretty}{
-  an argument included for compatibility with the \pkg{tree} package:
+  an argument included for compatibility with the original Splus tree package:
   \code{pretty = 0} implies \code{minlength = 0L},
   \code{pretty = NULL} implies \code{minlength = 1L}, and
   \code{pretty = TRUE} implies \code{minlength = 4L}.
