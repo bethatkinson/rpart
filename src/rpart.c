@@ -200,7 +200,7 @@ rpart(SEXP ncat2, SEXP method2, SEXP opt2,
     }
     i = (*rp_init) (n, rp.ydata, maxcat, &errmsg, parms, &rp.num_resp, 1, wt);
     if (i > 0)
-	error(errmsg);
+	error("%s", errmsg);
 
     nodesize = sizeof(Node) + (rp.num_resp - 20) * sizeof(double);
     tree = (pNode) ALLOC(1, nodesize);
