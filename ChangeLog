@@ -1,3 +1,5 @@
+2023 Dec 2	4.1-22  update C code to meet new CRAN standards
+2023 Oct 09     4.1-21	update R code to meet new CRAN standards
 2022 Oct 20     4.1-18  update C code to meet new CRAN standards
                         update French translation
 zzzz zzz zz     4.1-17  plot.rpart() gained three new arguments (branch.col, branch.lty,
