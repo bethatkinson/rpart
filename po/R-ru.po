@@ -8,17 +8,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: R 2.7.0\n"
-"Report-Msgid-Bugs-To: bugs@r-project.org\n"
+"Report-Msgid-Bugs-To: sourcestringbugs.o40l9j@zapiermail.com\n"
 "POT-Creation-Date: 2012-11-22 09:24\n"
-"PO-Revision-Date: 2013-03-19 14:46-0600\n"
-"Last-Translator: Alexey Shipunov <dactylorhiza@gmail.com>\n"
+"PO-Revision-Date: 2024-04-24 16:20+0000\n"
+"Last-Translator: Ivan Krylov <ikrylov@disroot.org>\n"
 "Language-Team: Russian\n"
-"Language: \n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=KOI8-R\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.16.4\n"
 "X-Poedit-Language: Russian\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 msgid "'x' must be a numeric vector"
 msgstr "'x' должен быть числовым вектором"
@@ -132,10 +134,14 @@ msgid "Maximum depth must be at least 1"
 msgstr "Максимальная глубина должна быть по меньшей мере 1"
 
 msgid "The value of 'usesurrogate' supplied was out of range, the default value of 2 is used instead."
-msgstr "Указанное значение usesurrogate было вне размаха,вместо него использовано умалчиваемое значение 2 "
+msgstr ""
+"Значение 'usesurrogate' выходило за пределы допустимого диапазона, использую "
+"вместо него значение по умолчанию 2."
 
 msgid "The value of 'surrogatestyle' supplied was out of range, the default value of 0 is used instead."
-msgstr "Указанное значение usesurrogate было вне размаха,вместо него использовано умалчиваемое значение 0 "
+msgstr ""
+"Значение 'surrogatestyle' вышло за пределы допустимого диапазона, использую "
+"вместо него значение по умолчанию 0."
 
 msgid "Response must be a 'survival' object - use the 'Surv()' function"
 msgstr "Ответ должен быть survival-объектом -- используйте функцию 'Surv()'"
@@ -211,8 +217,10 @@ msgstr "указанные узлы %s листья"
 
 #~ msgid "more than 52 levels in a predicting factor, truncated for printout"
 #~ msgstr "больше 52 уровней предсказующего фактора, обрезано для печати"
+
 #~ msgid "x does not appear to be an \"rpart\" object"
 #~ msgstr "похоже, что x -- не \"rpart\"-объект"
+
 #~ msgid "'x' not converted"
 #~ msgstr "'x' не преобразован"
 
@@ -231,24 +239,33 @@ msgstr "указанные узлы %s листья"
 #, fuzzy
 #~ msgid "Not a legitimate 'rpart' object"
 #~ msgstr "Неправильный rpart-объект"
+
 #~ msgid "The value of surrogatestyle supplied was out of range,"
 #~ msgstr "Указанное значение surrogatestyle было вне размаха,"
+
 #~ msgid "the default value of 0 is used instead."
 #~ msgstr "вместо него использовано умалчиваемое значение 0 "
+
 #~ msgid "Not legitimate rpart"
 #~ msgstr "Неправильный rpart"
+
 #~ msgid "Must be an rpart x"
 #~ msgstr "Должен быть rpart x"
+
 #~ msgid "the default value of 2 is used instead."
 #~ msgstr "вместо него использовано умалчиваемое значение 2 "
+
 #~ msgid "Argument"
 #~ msgstr "Аргумент"
+
 #~ msgid "Nodes"
 #~ msgstr "Узлы"
+
 #~ msgid ","
 #~ msgstr ","
+
 #~ msgid "are leaves"
 #~ msgstr "листья"
+
 #~ msgid "Observation time must be >0"
 #~ msgstr "Время наблюдений должно быть > 0"
-
