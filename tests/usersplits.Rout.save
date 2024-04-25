@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2019-04-05 r76323) -- "Unsuffered Consequences"
-Copyright (C) 2019 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -147,7 +147,7 @@ Type 'q()' to quit R.
 [1] TRUE
 > 
 > # Now try xpred on it
-> xvtemp <- rep(1:5, length=50)
+> xvtemp <- rep(1:5, length.out=50)
 > xp1 <- xpred.rpart(fit1, xval=xvtemp)
 > xp2 <- xpred.rpart(fit2, xval=xvtemp)
 > aeq <- function(x,y) all.equal(as.vector(x), as.vector(y))
@@ -169,4 +169,4 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
-  0.155   0.025   0.175 
+  0.173   0.035   0.201 

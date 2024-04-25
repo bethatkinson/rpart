@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2019-04-05 r76323) -- "Unsuffered Consequences"
-Copyright (C) 2019 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -22,14 +22,14 @@ Type 'q()' to quit R.
 > library(rpart)
 > set.seed(10)
 > 
-> xgrp <- rep(1:10,length=nrow(cu.summary))
+> xgrp <- rep(1:10,length.out=nrow(cu.summary))
 > carfit <- rpart(Country ~ Reliability + Price + Mileage + Type,
 + 		 method='class', data=cu.summary, 
 + 		 control=rpart.control(xval=xgrp))
 > 
 > carfit2 <- rpart(Country ~ Reliability + Price + Mileage + Type,
 + 		 method='class', data=cu.summary, 
-+ 		 weight=rep(3,nrow(cu.summary)),
++ 		 weights=rep(3,nrow(cu.summary)),
 + 		 control=rpart.control(xval=xgrp))
 > 
 > all.equal(carfit$frame$wt,    carfit2$frame$wt/3)
@@ -164,4 +164,4 @@ Node number 13: 20 observations
 > 
 > proc.time()
    user  system elapsed 
-  0.114   0.017   0.125 
+  0.136   0.008   0.138 
