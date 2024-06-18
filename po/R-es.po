@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: rpart 4.1-8\n"
 "Report-Msgid-Bugs-To: sourcestringbugs.o40l9j@zapiermail.com\n"
 "POT-Creation-Date: 2015-01-16 07:53\n"
-"PO-Revision-Date: 2024-06-16 22:20+0000\n"
+"PO-Revision-Date: 2024-06-19 13:20+0000\n"
 "Last-Translator: Ricardo Villalba <rikivillalba@gmail.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -67,7 +67,6 @@ msgstr "se requiere un argumento 'formula'"
 msgid "Trees cannot handle interaction terms"
 msgstr "Los árboles no pueden manejar términos de interacción"
 
-#, fuzzy
 msgid "negative weights not allowed"
 msgstr "pesos negativos no permitidos"
 
