@@ -22,7 +22,7 @@ set.seed(10)
 #   tumor grade (Farrow) 1,2,3,4
 #   Gleason score (competing grading system)
 #   ploidy
-xgroup <- rep(1:10, length=nrow(stagec))
+xgroup <- rep(1:10, length.out=nrow(stagec))
 fit1 <- rpart(Surv(pgtime, pgstat) ~ age + eet + g2+grade+gleason +ploidy,
 		stagec, method="poisson",
               control=rpart.control(usesurrogate=0, cp=0, xval=xgroup))
@@ -45,7 +45,7 @@ names(mystate) <- c("population","income" , "illiteracy","life" ,
        "murder", "hs.grad", "frost",     "area",      "region")
 
 xvals <- 1:nrow(mystate)
-xvals[order(mystate$income)] <- rep(1:10, length=nrow(mystate))
+xvals[order(mystate$income)] <- rep(1:10, length.out=nrow(mystate))
 
 fit4 <- rpart(income ~ population + region + illiteracy +life + murder +
 			hs.grad + frost , mystate,
@@ -90,7 +90,7 @@ fit5 <- rpart(factor(pgstat) ~  age + eet + g2+grade+gleason +ploidy,
 fit5
 
 fit6 <- rpart(factor(pgstat) ~  age + eet + g2+grade+gleason +ploidy,
-		stagec, parm=list(prior=c(.5,.5)), xval=xgroup)
+		stagec, parms=list(prior=c(.5,.5)), xval=xgroup)
 summary(fit6)
 #
 # Fit a classification model to the car data.
@@ -98,7 +98,7 @@ summary(fit6)
 # make a lot of statistical sense, but it does test out some
 # areas of the code that nothing else does
 #
-xcar <- rep(1:8, length=nrow(cu.summary))
+xcar <- rep(1:8, length.out=nrow(cu.summary))
 carfit <- rpart(Reliability ~ Price + Country + Mileage + Type,
 		   method='class', data=cu.summary, xval=xcar)
 

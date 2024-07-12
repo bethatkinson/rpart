@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2019-04-05 r76323) -- "Unsuffered Consequences"
-Copyright (C) 2019 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -40,7 +40,7 @@ Loading required package: survival
 > #   tumor grade (Farrow) 1,2,3,4
 > #   Gleason score (competing grading system)
 > #   ploidy
-> xgroup <- rep(1:10, length=nrow(stagec))
+> xgroup <- rep(1:10, length.out=nrow(stagec))
 > fit1 <- rpart(Surv(pgtime, pgstat) ~ age + eet + g2+grade+gleason +ploidy,
 + 		stagec, method="poisson",
 +               control=rpart.control(usesurrogate=0, cp=0, xval=xgroup))
@@ -412,7 +412,7 @@ Node number 51: 11 observations
 +        "murder", "hs.grad", "frost",     "area",      "region")
 > 
 > xvals <- 1:nrow(mystate)
-> xvals[order(mystate$income)] <- rep(1:10, length=nrow(mystate))
+> xvals[order(mystate$income)] <- rep(1:10, length.out=nrow(mystate))
 > 
 > fit4 <- rpart(income ~ population + region + illiteracy +life + murder +
 + 			hs.grad + frost , mystate,
@@ -636,7 +636,7 @@ node), split, n, loss, yval, (yprob)
       15) g2< 17.91 23  3 1 (0.1304 0.8696) *
 > 
 > fit6 <- rpart(factor(pgstat) ~  age + eet + g2+grade+gleason +ploidy,
-+ 		stagec, parm=list(prior=c(.5,.5)), xval=xgroup)
++ 		stagec, parms=list(prior=c(.5,.5)), xval=xgroup)
 > summary(fit6)
 Call:
 rpart(formula = factor(pgstat) ~ age + eet + g2 + grade + gleason + 
@@ -841,7 +841,7 @@ Node number 53: 8 observations
 > # make a lot of statistical sense, but it does test out some
 > # areas of the code that nothing else does
 > #
-> xcar <- rep(1:8, length=nrow(cu.summary))
+> xcar <- rep(1:8, length.out=nrow(cu.summary))
 > carfit <- rpart(Reliability ~ Price + Country + Mileage + Type,
 + 		   method='class', data=cu.summary, xval=xcar)
 > 
@@ -939,4 +939,4 @@ Node number 23: 8 observations
 > 
 > proc.time()
    user  system elapsed 
-  0.742   0.040   0.776 
+  0.846   0.057   0.896 

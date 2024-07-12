@@ -31,9 +31,9 @@ pseudo <- double(nn)
 pseudo[1] <- pi/6
 for (i in 2:nn) pseudo[i] <- 4*pseudo[i-1]*(1-pseudo[i-1])
 
-wts <-  rep(1:7, length=nn)
+wts <-  rep(1:7, length.out=nn)
 temp <- rep(1:nn, wts)             #row replicates
-xgrp <- rep(1:10, length=nn)[order(pseudo)]
+xgrp <- rep(1:10, length.out=nn)[order(pseudo)]
 xgrp2<- rep(xgrp, wts)
 
 # The cp value stops one last split where the two predictors are

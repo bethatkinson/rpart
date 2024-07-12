@@ -42,9 +42,9 @@ pseudo <- double(nrow(stagec))
 pseudo[1] <- pi/4
 for (i in 2:nrow(stagec)) pseudo[i] <- 4*pseudo[i-1]*(1 - pseudo[i-1])
 
-wts <- rep(1:5, length=nrow(stagec))
+wts <- rep(1:5, length.out=nrow(stagec))
 temp <- rep(1:nrow(stagec), wts)             #row replicates
-xgrp <- rep(1:10, length=146)[order(pseudo)]
+xgrp <- rep(1:10, length.out=146)[order(pseudo)]
 xgrp2<- rep(xgrp, wts)
 #  Direct: replicate rows in the data set, and use unweighted
 fit2 <- rpart(Surv(pgtime, pgstat) ~ age + eet + g2+grade+gleason +ploidy,
@@ -54,7 +54,7 @@ fit2 <- rpart(Surv(pgtime, pgstat) ~ age + eet + g2+grade+gleason +ploidy,
 #  Weighted
 fit2b<- rpart(Surv(pgtime, pgstat) ~ age + eet + g2+grade+gleason +ploidy,
 	      control=rpart.control(minsplit=2, xval=xgrp, cp=.025),
-	      data=stagec, method='poisson', weight=wts)
+	      data=stagec, method='poisson', weights=wts)
 
 all.equal(fit2$frame[-2],  fit2b$frame[-2])  # the "n" component won't match
 all.equal(fit2$cptable,    fit2b$cptable)

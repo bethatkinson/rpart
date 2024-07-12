@@ -39,9 +39,9 @@ all.equal(xx2$frame$dev, c(82.5, 10, 2, .5, 10, .5, 2)*2)
 # Later -- cut it back to maxdepth=3 for the same reason (a tie).
 #
 nn <- nrow(mystate)
-wts <- rep(1:5, length=nn)
+wts <- rep(1:5, length.out=nn)
 temp <- rep(1:nn, wts)             #row replicates
-xgrp <- rep(1:10, length=nn)
+xgrp <- rep(1:10, length.out=nn)
 xgrp2<- rep(xgrp, wts)
 tempc <- rpart.control(minsplit=2, xval=xgrp2, maxsurrogate=0,
 		       maxcompete=3, maxdepth=3)

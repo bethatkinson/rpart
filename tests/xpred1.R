@@ -6,7 +6,7 @@ library(rpart)
 set.seed(10)
 
 tdata <- data.frame(y=1:12, x1= 12:1, x2=c(1,1,5,5,4,4,9,9,7,7,3,3))
-xgrp <- rep(1:3, length=12)
+xgrp <- rep(1:3, length.out=12)
 
 fit1 <- rpart(y ~ x1 + x2, tdata, minsplit=6)
 xfit1 <- xpred.rpart(fit1, xval=xgrp, return.all=T)

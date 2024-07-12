@@ -9,7 +9,7 @@ set.seed(10)
 fit1 <- rpart(Surv(pgtime, pgstat) ~ age + eet + g2+grade+gleason +ploidy,
                 stagec,  method='poisson')
 
-xgrp <- rep(1:3, length=nrow(stagec))  # explicitly set the xval groups
+xgrp <- rep(1:3, length.out=nrow(stagec))  # explicitly set the xval groups
 
 xfit1 <- xpred.rpart(fit1, xval=xgrp, return.all=T)
 xfit2 <- array(0, dim=dim(xfit1))

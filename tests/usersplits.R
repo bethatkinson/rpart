@@ -125,7 +125,7 @@ all.equal(fit1$where, fit2$where)
 all.equal(fit1$cptable, fit2$cptable)
 
 # Now try xpred on it
-xvtemp <- rep(1:5, length=50)
+xvtemp <- rep(1:5, length.out=50)
 xp1 <- xpred.rpart(fit1, xval=xvtemp)
 xp2 <- xpred.rpart(fit2, xval=xvtemp)
 aeq <- function(x,y) all.equal(as.vector(x), as.vector(y))
