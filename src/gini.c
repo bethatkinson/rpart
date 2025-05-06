@@ -49,10 +49,10 @@ giniinit(int n, double **y, int maxcat, char **error,
 	right = left + numclass;
 
 	tsplit = (int *) ALLOC(maxcat * 2, sizeof(int));
-	countn = tsplit + maxcat;
+	countn = maxcat > 0 ? (tsplit + maxcat) : tsplit;
 
 	awt = (double *) ALLOC(maxcat * 2, sizeof(double));
-	rate = awt + maxcat;
+	rate = maxcat > 0 ? (awt + maxcat) : awt;
 
 	if (maxcat > 0) {
 	    graycode_init0(maxcat);

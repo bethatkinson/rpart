@@ -102,7 +102,13 @@ rpart <-
     }
 
     controls <- rpart.control(...)
-    if (!missing(control)) controls[names(control)] <- control
+    ## This avoided the sanity checking of rpart.control
+    ## if (!missing(control)) controls[names(control)] <- control
+    if (!missing(control)) {
+        if(!all(names(control) %in% names(controls)))
+        stop("unkown named elements in 'control'")
+        controls <- do.call(rpart.control, control)
+    }
 
     xval <- controls$xval
     if (is.null(xval) || (length(xval) == 1L && xval == 0L) || method=="user") {

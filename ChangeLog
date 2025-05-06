@@ -1,3 +1,5 @@
+2025 May 6      4.1-25  Added in fixes made by Brian Ripley
+2023 Dec 4      4.1-23  Need to remember to build with --compact-vignettes=both
 2023 Dec 2	4.1-22  update C code to meet new CRAN standards
 2023 Oct 09     4.1-21	update R code to meet new CRAN standards
 2022 Oct 20     4.1-18  update C code to meet new CRAN standards

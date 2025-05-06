@@ -14,7 +14,8 @@ typedef struct split {
     struct split *nextsplit;
     int var_num;
     int count;
-    int csplit[20];            /* the actual length depends on splitting rule */
+    // package 'embed' has an example with 29 levels
+    int csplit[100];            /* the actual length depends on splitting rule */
 } Split, *pSplit;
 
 /* The real 'nodesize' is set in rpart.c */
