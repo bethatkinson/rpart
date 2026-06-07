@@ -14,7 +14,7 @@
 ##   ... = other args for abbreviate()
 ##
 labels.rpart <- function(object, digits = 4, minlength = 1L, pretty,
-                         collapse = TRUE, ...)
+                         collapse = TRUE, sql = FALSE, ...)
 {
     if (missing(minlength) && !missing(pretty)) {
 	minlength <- if (is.null(pretty)) 1L
@@ -75,7 +75,7 @@ labels.rpart <- function(object, digits = 4, minlength = 1L, pretty,
 	    j <- jrow[i]
 	    splits <- object$csplit[crow[i], ]
 	    ## splits will contain 1=left, 3=right, 2= neither
-            cl <- if (minlength == 1L) "" else ","
+            cl <- if (minlength == 1L) "" else if (sql) "', '" else ","
             lsplit[j] <-
                 paste((xlevels[[cindex[i]]])[splits == 1L], collapse = cl)
             rsplit[j] <-
@@ -90,8 +90,17 @@ labels.rpart <- function(object, digits = 4, minlength = 1L, pretty,
 	return(cbind(ltemp, rtemp))
     }
 
-    lsplit <- paste0(ifelse(ncat < 2L, "", "="), lsplit)
-    rsplit <- paste0(ifelse(ncat < 2L, "", "="), rsplit)
+    if (sql) {
+        lsplit <- ifelse(ncat < 2L,
+                         paste0( "", lsplit),
+                         paste0(paste0(" in ('", lsplit), "')"))
+        rsplit <- ifelse(ncat < 2L,
+                         paste0( "", rsplit),
+                         paste0(paste0(" in ('", rsplit), "')"))
+    } else {
+        lsplit <- paste0(ifelse(ncat < 2L, "", "="), lsplit)
+        rsplit <- paste0(ifelse(ncat < 2L, "", "="), rsplit)
+    }
 
     ## Now match them up to node numbers
     ##   The output will have one label per row of object$frame, each
